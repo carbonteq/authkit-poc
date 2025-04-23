@@ -16,7 +16,7 @@ ENV WORKOS_CLIENT_ID=${WORKOS_CLIENT_ID} \
     
 WORKDIR /app
 
-COPY . .
+COPY client-a .
 
 RUN rm -rf package-lock.json node_modules && npm install
 
