@@ -4,12 +4,12 @@ services:
     ports:
       - "3000:3000"
     env_file:
-      - .env
+      - .client-a.env
     restart: unless-stopped
   sso-b:
     image: owaisatcarbonteq/sso-b:latest
     ports:
       - "3001:3000"
     env_file:
-      - .env
+      - .client-b.env
     restart: unless-stopped
