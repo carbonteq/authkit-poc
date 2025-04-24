@@ -3,13 +3,25 @@ services:
     image: owaisatcarbonteq/sso-a:latest
     ports:
       - "3000:3000"
-    env_file:
-      - .client-a.env
+    environment:
+      - WORKOS_CLIENT_ID=${WORKOS_CLIENT_ID}
+      - WORKOS_API_KEY=${WORKOS_API_KEY}
+      - WORKOS_COOKIE_PASSWORD=${WORKOS_COOKIE_PASSWORD}
+      - WORKOS_CONNECTION_ID=${WORKOS_CONNECTION_ID}
+      - WORKOS_ORGANIZATION_ID=${WORKOS_ORGANIZATION_ID}
+      - NEXT_PUBLIC_WORKOS_REDIRECT_URI=${NEXT_PUBLIC_WORKOS_REDIRECT_URI_A}
+      - APP_URI=${APP_URI_A}
     restart: unless-stopped
   sso-b:
     image: owaisatcarbonteq/sso-b:latest
     ports:
       - "3001:3000"
-    env_file:
-      - .client-b.env
+    environment:
+      - WORKOS_CLIENT_ID=${WORKOS_CLIENT_ID}
+      - WORKOS_API_KEY=${WORKOS_API_KEY}
+      - WORKOS_COOKIE_PASSWORD=${WORKOS_COOKIE_PASSWORD}
+      - WORKOS_CONNECTION_ID=${WORKOS_CONNECTION_ID}
+      - WORKOS_ORGANIZATION_ID=${WORKOS_ORGANIZATION_ID}
+      - NEXT_PUBLIC_WORKOS_REDIRECT_URI=${NEXT_PUBLIC_WORKOS_REDIRECT_URI_B}
+      - APP_URI=${APP_URI_B}
     restart: unless-stopped
