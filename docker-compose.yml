@@ -1,0 +1,15 @@
+services:
+  sso-a:
+    image: owaisatcarbonteq/sso-a:latest
+    ports:
+      - "3000:3000"
+    env_file:
+      - .env
+    restart: unless-stopped
+  sso-b:
+    image: owaisatcarbonteq/sso-b:latest
+    ports:
+      - "3001:3000"
+    env_file:
+      - .env
+    restart: unless-stopped
