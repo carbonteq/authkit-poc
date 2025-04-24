@@ -4,7 +4,7 @@ import {
   getSignUpUrl,
   withAuth,
 } from "@workos-inc/authkit-nextjs"
-import { logOutAction } from "@/actions/auth.action"
+import { logOutAction } from "../actions/auth.action"
 
 const Home = async () => {
   const { user } = await withAuth()
